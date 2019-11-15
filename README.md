@@ -39,7 +39,13 @@ bida_mean <- calc_bida_post_mean(bida_post)
 mse <- mean((bida_mean-true_effects)[diag(ncol(data)) == 0]^2)
 ```
 
-This should give an MSE around 0.0655. Alternatively, if one is interested in ranking the causal effect by their magnitude, one can use calc_bida_post_mean_abs to calculate (numerically) the posterior absolute mean.
+This should give an MSE around 0.0655. 
+
+Alternatively, if one is interested in ranking the causal effect by their magnitude, one can calculate (numerically) the posterior absolute mean.
+
+``` r
+bida_mean_abs <- calc_bida_post_mean_abs(bida_post)
+```
 
 ## Reference
 
