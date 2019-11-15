@@ -1,11 +1,22 @@
 # BIDA
-Code for causal effect discovery and linear causal effect estimation using Bayesian IDA (BIDA). The package contains an APS solver (in C++) for computing parent set and ancestor relation posterior probabilities using dynamic programming (see Algorithm 1 in [1]). The computationally less demanding part of the effect estimation method has been implemented in R.
 
-## APS solver
+Code for causal effect discovery and linear causal effect estimation using Bayesian IDA (BIDA). The package contains an C++ implementation (APS) for exact computation of parent set and ancestor relation posterior probabilities using dynamic programming (see Algorithm 1 in [1]). The computationally less demanding part of the effect estimation method has been implemented in R.
 
-## Running BIDA from R
+## APS
 
-After compiling the APS solver, BIDA can be run from R. As an example case, we will use the included data, which contains 200 observations from a Gaussian DAG model over 10 variables. The data has been zero-centered and standardized. 
+The APS tool can be used for two related but separate problems:
+
+* For each variable and parent set, compute the total weight of all DAGs where a node has a particular parent set.
+
+* For each pair (i, j) of variables, compute the total weight of DAGs where j is an ancestor of i.
+
+To compile the program, go to the aps subdirectory and run `make`. 
+
+After compilation, use `aps help` for more details about the tool.
+
+## Calculating BIDA posteriors
+
+After compiling the APS program, BIDA can be run from R. As an example case, we will use the included data, which contains 200 observations from a Gaussian DAG model over 10 variables. The data has been zero-centered and standardized. 
 
 Assuming the BIDA folder is set as the current working directory in R, we read in the data and true causal effect matrix. 
 
