@@ -1,5 +1,5 @@
 # BIDA
-Code for running linear causal effect estimation using Bayesian IDA (BIDA).
+Code for running linear causal effect estimation using Bayesian IDA (BIDA). The package contains an APS solver (in C++) for computing parent set and ancestor relation posterior probabilities using dynamic programming (see Algorithm 1 in [1]). The computationally less demanding part of the method has been implemented in R.
 
 ## APS solver
 
@@ -21,8 +21,9 @@ file_paths <- list.files(pattern = "[.]R$", path = "R/", full.names = TRUE)
 invisible(sapply(file_paths, source))
 ```
 
-``` r
 We compute the BIDA posteriors, setting the maximum parent set size to 5.
+
+``` r
 bida_post <- bida(data, max_parent_size = 5)
 ```
 
@@ -37,3 +38,14 @@ mse <- mean((bida_mean-true_effects)[diag(ncol(data)) == 0]^2)
 ```
 
 This should give an MSE around 0.0655. Alternatively, if one is interested in ranking the causal effect by their magnitude, one can use calc_bida_post_mean_abs to calculate (numerically) the posterior absolute mean.
+
+## Reference
+
+BIDA was developed as part of an academic project: 
+
+[1] Pensar, J., Talvitie, T., Hyttinen, A., Koivisto, M. A Bayesian Approach for Estimating Causal Effects from Observational Data. 
+
+# (Please cite the above paper when using the method or parts of it (modified or as is).)
+
+
+
