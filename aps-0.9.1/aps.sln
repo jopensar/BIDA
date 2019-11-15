@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aps", "aps\aps.vcxproj", "{515DCD1E-1AE5-43B9-9133-DCB7F80A7F1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{515DCD1E-1AE5-43B9-9133-DCB7F80A7F1B}.Debug|x64.ActiveCfg = Debug|x64
+		{515DCD1E-1AE5-43B9-9133-DCB7F80A7F1B}.Debug|x64.Build.0 = Debug|x64
+		{515DCD1E-1AE5-43B9-9133-DCB7F80A7F1B}.Release|x64.ActiveCfg = Release|x64
+		{515DCD1E-1AE5-43B9-9133-DCB7F80A7F1B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C05DE2A8-01ED-455B-A4B6-F099E7D02099}
+	EndGlobalSection
+EndGlobal
