@@ -58,6 +58,16 @@ Alternatively, if one is interested in ranking the causal effect by their magnit
 bida_mean_abs <- calc_bida_post_mean_abs(bida_post)
 ```
 
+## Calculating Ancestor Relation Probabilities (ARPs)
+
+Continuing with our example above, we compute the ARPs which is a more direct Bayesian approach for estimating if there exists a causal relation or not. Again, the maximum parent set size is set to 5. 
+
+``` r
+arp <- calc_arp(data, max_parent_size = 5)
+```
+
+In the resulting matrix, the value at row i and column j is the posterior probability of there existing an ancestral path from i to j.
+
 ## Reference
 
 BIDA was developed as part of an academic project: 
