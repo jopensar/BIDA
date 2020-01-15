@@ -1,7 +1,7 @@
 #====================================================================================================
-# BIDA main function
+# CALC_ARP - function for calculating ancestor relation posterior probabilities
 #====================================================================================================
-bida <- function(data, max_parent_size){
+calc_arp <- function(data, max_parent_size){
   
   if (ncol(data) > 20){
     stop("Don't use on systems with more than 20 variables.")
@@ -14,17 +14,18 @@ bida <- function(data, max_parent_size){
   calc_parent_score_to_file(data, "fml", max_parent_size, file_out = "temp")
   
   # Calculate parent support using the APS solver
-  aps_type <- "modular"
-  system(paste("aps-0.9.1/aps/aps", aps_type, "temp.fml.score temp.fml.support", collapse = ""))
+  aps_type <- "ar_modular"
+  system(paste("aps-0.9.1/aps/aps", aps_type, "temp.fml.score temp.fml.arp", collapse = ""))
   
   # Read in calculated parent support from file
-  ps <- read_in_aps_parent_post("temp.fml.support", max_parent_size)
+  ar_post <- as.matrix(read.delim("temp.fml.arp", header = FALSE, sep = " ", skip = ncol(data)+1))
+  colnames(ar_post) <- NULL
   
-  # Calculate BIDA posteriors
-  bida_post <- calc_bida_post(data, ps)
-  
+  # Transform into normalized probabilities and transpose matrix
+  ar_post <- t(exp(ar_post-ar_post[1,1]))
+    
   # Delete temporary files
-  file.remove("temp.fml.support","temp.fml.score")
+  file.remove("temp.fml.arp","temp.fml.score")
   
-  return(bida_post)
+  return(ar_post)
 }

@@ -1,7 +1,7 @@
 #====================================================================================================
 # Function for reading in APS computed parent posteriors
 #====================================================================================================
-read_in_aps_parent_posteriors <- function(file_path, max_par_size){
+read_in_aps_parent_post <- function(file_path, max_par_size){
   temp <- read.table(file_path, header = FALSE, sep = " ", col.names = paste0("V",seq_len(max_par_size+2)), fill = TRUE)
   d <- temp[1,1]	
   pos <- 2
