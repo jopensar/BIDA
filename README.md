@@ -8,7 +8,7 @@ The APS tool can be used for two related but separate problems:
 
 * For each variable and parent set, compute the total weight of all DAGs where a node has a particular parent set.
 
-* For each pair (i, j) of variables, compute the total weight of DAGs where j is an ancestor of i.
+* For each pair `(i, j)` of variables, compute the total weight of DAGs where `j` is an ancestor of `i`.
 
 To compile the program, go to the aps subdirectory and run `make`. 
 
@@ -66,7 +66,7 @@ Continuing with our example above, we compute the ARPs which is a more direct Ba
 arp <- calc_arp(data, max_parent_size = 5)
 ```
 
-In the resulting matrix, the value at row i and column j is the posterior probability of there existing an ancestral path from i to j.
+In the resulting matrix, the value at row `i` and column `j` is the posterior probability of there existing an ancestral path from `i` to `j`.
 
 ## Reference
 
