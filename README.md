@@ -72,9 +72,9 @@ In the resulting matrix, the value at row `i` and column `j` is the posterior pr
 
 BIDA was developed as part of an academic project: 
 
-[1] Pensar, J., Talvitie, T., Hyttinen, A., Koivisto, M. A Bayesian Approach for Estimating Causal Effects from Observational Data. 
+[1] Pensar, J., Talvitie, T., Hyttinen, A., Koivisto, M. A Bayesian Approach for Estimating Causal Effects from Observational Data. Accepted to *AAAI-20*.
 
-<!-- Please cite the above paper when using the method or parts of it (modified or as is). -->
+Please cite the above paper when using the method or parts of it (modified or as is).
 
 
 
