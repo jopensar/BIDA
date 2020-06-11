@@ -1,6 +1,8 @@
 # BIDA
 
-Code for causal effect discovery and linear causal effect estimation using Bayesian IDA (BIDA). The package contains an C++ implementation (APS) for exact computation of parent set and ancestor relation posterior probabilities using dynamic programming (see Algorithm 1 in [1]). The computationally less demanding part of the effect estimation method has been implemented in R.
+Code for causal effect discovery and linear causal effect estimation using Bayesian IDA (BIDA). The code package contains an C++ implementation (APS) for exact computation of parent set and ancestor relation posterior probabilities using dynamic programming (see Algorithm 1 in Pensar et al. [1]). The computationally less demanding part of the effect estimation method has been implemented in R. 
+
+The repo also contains the supplementary material for the accepted paper. 
 
 ## APS
 
